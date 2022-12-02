@@ -212,4 +212,3 @@ const isDecreaseArray = lastArray.every((item, index, array) => {
 console.log(isDecreaseArray);
 
 
-
