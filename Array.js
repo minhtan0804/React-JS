@@ -1,15 +1,15 @@
-const isArrayNumbers = (array) => {
-    return array.every((item) => {
-        return typeof item === 'number';
-    });
-}
-
 const isNumber = (number) => typeof number === 'number';
+
 console.log(isNumber(2));
 
-// Bai 1
+const isArrayNumbers = (array) => {
+    return isNumber;
+}
+
 const array = [1, 2, 3, 4, 5];
 console.log(isArrayNumbers(array));
+
+// Bai 1. Viết hàm tìm ra số nhỏ nhất trong mảng các số.
 
 const minNumbers = (array) => {
     if (isArrayNumbers(array)) {
@@ -21,11 +21,12 @@ const minNumbers = (array) => {
 
 console.log(minNumbers(array));
 
-// Bai 2
+// Bai 2. Viết hàm tìm ra số lớn thứ nhì trong mảng các số
 
 const maxNumber = (array) => {
     if (isArrayNumbers(array)) {
-        return Math.max(...array);
+        array.sort();
+        return array[array.length - 2];
     }
 
     throw new Error('Array have element is number');
@@ -33,13 +34,14 @@ const maxNumber = (array) => {
 
 console.log(maxNumber(array));
 
-// Bai 3
+// Bai 3.Viết hàm truyền vào 1 mảng tên học viên, 
+// sắp xếp lại mảng này theo chiều ngược của bảng chữ cái. 
 
 const arrayStr = ['Nam', 'Hoa', 'Tuấn'];
 
 console.log(arrayStr.sort().reverse());
 
-// Bai 4
+// Bai 4. Tính tổng các số chia hết cho 5 từ 0 -> 100
 
 const arrayDivisibleBy5 = (fisrt, last) => {
     // if ([fisrt, last].some((number) => !isNumber(number))) {
@@ -59,12 +61,14 @@ const arrayDivisibleBy5 = (fisrt, last) => {
 
 console.log(arrayDivisibleBy5(3 ,100));
 
-// Bai 5
+// Bai 5. Viết hàm cho phép truyền vào 1 mảng các số,
+//  kết quả trả về là 1 mảng mới với các số là số dư tương ứng khi chia mảng cũ cho 2
 
 const newArray = array.map ((number, index, array) => number % 2);
+
 console.log(newArray)
 
-// Bai 6
+// Bai 6. Cho 1 mảng các chuỗi. Viết hàm lọc ra các phần tử có độ dài lớn nhất.
 
 const arr = ['aba', 'aa', 'ad', 'c', 'vcd'];
 // Solution 1
@@ -100,31 +104,35 @@ console.log(largestStringLength(arr));
 
 // Solution 3
 
-// const lengthMax = arr.reduce((max, string) => {
-//     console.log(max);
-//     console.log(string.length);
-//     if (string.length > max)
-//         return string.length;
+const lengthMax = arr.reduce((max, string) => {
+    if (string.length > max)
+        return string.length;
 
-//     return max;	
+    return max;	
 
-// }, 0)
+}, 0)
 
-// console.log(lengthMax);
+console.log(lengthMax);
 
-// const largestStringLength = arr.reduce((lengthMax, string, array) => {
-//     console.log(lengthMax);
-//     if (string.length === lengthMax) {
-//         console.log(string);
-//         return array.push(string);
-//     }
+const largestStringLength = arr.reduce((array, string) => {
+    const lengthMax = arr.reduce((max, string) => {
+        if (string.length > max)
+            return string.length;
+    
+        return max;	
+    
+    }, 0)
+    if (string.length === lengthMax) {
+        console.log(string);
+        array.push(string);
+    }
 
-//     return array;	
-// }, []);
+    return array;	
+}, []);
 
-// console.log(largestStringLength);
+console.log(largestStringLength);
 
-// Bai 7
+// Bai 7.  Viết chương trình JavaScript để lấy một phần tử ngẫu nhiên từ một mảng
 
 // const randomItem = (array) => array[Math.floor(Math.random() * array.length)]
 // console.log(randomItem(array));
@@ -132,12 +140,12 @@ console.log(largestStringLength(arr));
 const radomItem = _.sample(array, 2);
 console.log(radomItem)
 
-// Bai 8
+// Bai 8.Viết chương trình đổi chỗ ngẫu nhiên vị trí của các phần tử trong mảng
 
 const shuffleArray = _.shuffle(array);
 console.log(shuffleArray);
 
-// Bai 9
+// Bai 9. Viết chương trình JavaScript để lấy một mảng các phần tử xuất hiện trong cả hai mảng
 
 const intersection = (firstArry, secondArry) => {
     return (firstArry.filter((item) => secondArry.includes(item)))
@@ -147,7 +155,7 @@ const intersection = (firstArry, secondArry) => {
 const array2 = [5, 3, 2, 8];
 console.log(intersection(array, array2));
 
-// Bai 10
+// Bai 10. Viết một chương trình JavaScript để lấy sự phần tử không xuất hiện ở cả 2 mảng
 
 const difference = (firstArry, secondArry) => {
     return(firstArry.filter((item) => !secondArry.includes(item)))
@@ -156,7 +164,8 @@ const difference = (firstArry, secondArry) => {
 
 console.log(difference(array, array2));
 
-// Bai 11
+// Bai 11. Viết một chương trình JavaScript trả về một tập hợp con của một chuỗi.
+
 const string = "dogh"
 const strArr = string.split('');
 
@@ -180,7 +189,7 @@ for (let i = 0; i < string.length; i++) {
 }
 console.log(res);
 
-// Bai 12
+// Bai 12.  Kiểm tra mảng xem có phải mảng tăng dần hay không
 
 const lastArray = [1, 2, 5, 6, 8, 9];
 const isIncreaseArray = lastArray.every((item, index, array) => {
@@ -196,7 +205,8 @@ const isIncreaseArray = lastArray.every((item, index, array) => {
 
 console.log(isIncreaseArray);
 
-// Bai 13
+// Bai 13. Kiểm tra mảng xem có phải mảng sô lẻ giảm dần hay không
+
 
 const isDecreaseArray = lastArray.every((item, index, array) => {
     
