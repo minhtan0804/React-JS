@@ -1,20 +1,58 @@
-// Bai 1
+var user = {
+    name : "Nguyễn Tiến Đạt",
+    age : 25,
+    email : 'support@amela.vn'
+};
 
+// Bai 1.  Viết hàm để lấy danh sách các key của object
 
+const userKeys =  Object.keys(user);
 
+console.log(userKeys);
 
-// Bai 2
+// Bai 2. Viết hàm để lấy danh sách các value của object
 
-// Bai 3
+const userValues = Object.values(user);
 
-// Bai 4
+console.log(userValues);
 
-// Bai 5
+// Bai 3. Viết hàm kiểm tra key có tồn tại trong Object không
 
-// Bai 6
+const haveKey = (key) => userKeys.includes(key);
 
-// Bai 7
+console.log(haveKey('name'));
 
-// Bai 8
+// Bai 4. . Viết hàm kiểm tra Object có độ dài bao nhiêu
 
-// Bai 9
+// const sizeObject = Object.keys(user).length;
+
+const sizeObject = _.size(user);
+
+console.log(sizeObject);
+
+// Bai 5. 
+
+var user1 = {
+    name : "A",
+    age : 18,
+    isStatus : true
+};
+
+var user2 = {
+    name : "B",
+    age : 30,
+    isStatus : true
+};
+
+var user3 = {
+    name : "C",
+    age : 27,
+    isStatus : false
+};
+
+const userArray = [user1, user2, user3];
+
+const userHaveCondition = userArray.filter((user, index, array) => {
+    return user.age > 25 && user.isStatus === true;
+}, [])
+console.log(userHaveCondition);
