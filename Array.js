@@ -178,30 +178,30 @@ console.log(difference(array, array2));
 
 // Bai 11. Viết một chương trình JavaScript trả về một tập hợp con của một chuỗi.
 
-const string = "dogh"
+const string = "dog"
 const strArr = string.split('');
 
-let res = [];
+let subSet = [];
 
 // for (let i = 1; i < strArr.length; i++) {
-//     const length = res.length;
-//     // console.log(res.length)
+//     const length = subSet.length;
+//     // console.log(subSet.length)
 //     for (let j = 0; j < length; j++) {
-//         res.push(res[j] + strArr[i]);
+//         subSet.push(subSet[j] + strArr[i]);
 //     }
-//     res.push(strArr[i]);
+//     subSet.push(strArr[i]);
 // }
 
 
 for (let i = 0; i < string.length; i++) {
     let count = 1;
     while (i + count <= string.length) {
-        res.push(string.substring(i, i + count));
+        subSet.push(string.substring(i, i + count));
         count++;
     }
 };
 
-console.log(res);
+console.log(subSet);
 
 // Bai 12.  Kiểm tra mảng xem có phải mảng tăng dần hay không
 
