@@ -30,7 +30,13 @@ const sizeObject = _.size(user);
 
 console.log(sizeObject);
 
-// Bai 5. 
+// Bai 5. Cho mảng các user mỗi user có cấu trúc
+// user = {
+//   name : string,
+//   age : number,
+//   isStatus : bool
+// }
+// Viết function lấy ra những user có tuổi > 25 và isStatus = true
 
 var user1 = {
     name : "A",
