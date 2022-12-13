@@ -113,15 +113,11 @@ console.log(largestStringLength);
 
 // Bai 7.  Viết chương trình JavaScript để lấy một phần tử ngẫu nhiên từ một mảng
 
-// const randomItem = (array) => array[Math.floor(Math.random() * array.length)]
+const randomItem = (array) => array[Math.floor(Math.random() * array.length)]
 
-// console.log(randomItem(array));
+console.log(randomItem(array));
 
 // const radomItem = _.sample(array);
-
-const radomItem = _.sample(array, 2);
-
-console.log(radomItem)
 
 // Bai 8.Viết chương trình đổi chỗ ngẫu nhiên vị trí của các phần tử trong mảng
 
