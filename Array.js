@@ -92,32 +92,6 @@ console.log(newArray(array))
 // Bai 6. Cho 1 mảng các chuỗi. Viết hàm lọc ra các phần tử có độ dài lớn nhất.
 
 const arr = ['aba', 'aa', 'ad', 'c', 'vcd'];
-// Solution 1
-
-// const largestStringLength = (array) => {
-//     return array.filter((string, index, array) => {
-//         if (string.length === array[0].length) {
-//             return string;
-//         }
-//     });
-// };
-
-// const sortedStringLength = (array) => {
-//     return array.sort((firstString, secondString) => {
-//         return secondString.length - firstString.length;
-//     });
-// }
-
-// console.log(largestStringLength(sortedStringLength(arr)));
-
-// Solution 2
-
-// arr.sort((firstString, secondString) => {
-//     return secondString.length - firstString.length;
-// });
-// console.log(largestStringLength(arr));
-
-// Solution 3
 
 const largestStringLength = arr.reduce((array, string) => {
     const lengthMax = arr.reduce((max, string) => {
