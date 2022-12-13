@@ -183,16 +183,6 @@ const strArr = string.split('');
 
 let subSet = [];
 
-// for (let i = 1; i < strArr.length; i++) {
-//     const length = subSet.length;
-//     // console.log(subSet.length)
-//     for (let j = 0; j < length; j++) {
-//         subSet.push(subSet[j] + strArr[i]);
-//     }
-//     subSet.push(strArr[i]);
-// }
-
-
 for (let i = 0; i < string.length; i++) {
     let count = 1;
     while (i + count <= string.length) {
